@@ -1,0 +1,6 @@
+[submodule "udemy-projects-html101"]
+	path = udemy-projects-html101
+	url = https://github.com/pcplusmac/udemy-projects.git
+[submodule "udemy-projects-html201"]
+	path = udemy-projects-html201
+	url = https://github.com/pcplusmac/udemy-projects.git
