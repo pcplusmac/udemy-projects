@@ -16,13 +16,13 @@
 # prompt the user to input the name of the account
 user=input("type the names of your account: ")
 # prompt user to enter the content like to add to account file
-content=input("type the name you enter:  ")
+# content=input("type the name you enter:  ")
 # capitalize the initial letters 
-content.upper()
+# content.upper()
 
 # operation on the file
-with open(user,'a') as file:
-    file.write(content)
+# with open(user,'a') as file:
+#     file.write(content)
 
 # prompt user to select if like to open the file
 file_opt=input("do you like to open the file now?(y/n)   ")
@@ -30,8 +30,10 @@ file_opt=input("do you like to open the file now?(y/n)   ")
 if file_opt in ['y','n']:
     if file_opt == 'y':
         with open(user,'r') as file:
-            names=file.read()
-            print(names) 
+            names=file.readlines()
+            print(type(names)) 
+            print(names)
+            print("---------")
 for n in names:
     print(n)
 
