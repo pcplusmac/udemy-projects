@@ -21,7 +21,7 @@ content=input("type the name you enter:  ")
 content.upper()
 
 # operation on the file
-with open(user,'w') as file:
+with open(user,'a') as file:
     file.write(content)
 
 # prompt user to select if like to open the file
@@ -30,7 +30,10 @@ file_opt=input("do you like to open the file now?(y/n)   ")
 if file_opt in ['y','n']:
     if file_opt == 'y':
         with open(user,'r') as file:
-            print(file.read()) 
+            names=file.read()
+            print(names) 
+for n in names:
+    print(n)
 
 
     
