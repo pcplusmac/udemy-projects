@@ -36,22 +36,22 @@ class Bank:
             self.balance= self.balance + amount
             self.log_transaction(self.balance)
         
+customer_acc=Bank(20)
+# prompt the user to input the name of the account in a iterative circumstances
+while True:
+    action=input(" choose deposit / withdraw: ")
+    if action in ['deposit','withdraw']:
+        if action=='deposit':
+            amt=input("how much do you want to put it? ")
+            customer_acc.deposit(amt)
+            print (customer_acc.balance)
+        else:
+            amt=input("how much do you want to take out? ")
+            customer_acc.withdraw(amt)
+            print(customer_acc.balance)
 
-bank=Bank(20)
-bank.deposit(10)
-print(bank.balance)
 
-# prompt the user to input the name of the account
-# action=input(" choose deposit / withdraw: ")
-# amt=input("enter the amount: ")
 
-# if action in ['deposit','withdraw']:
-#     if action=='deposit':
-#         bank.deposit(amt)
-#         print (bank.balance)
-#     if action=='withdraw':
-#         bank.withdraw(amt)
-#         print(bank.balance)
 
 # prompt user to enter the content like to add to account file
 # content=input("type the name you enter:  ")
