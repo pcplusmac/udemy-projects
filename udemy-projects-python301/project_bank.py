@@ -11,7 +11,8 @@ class Bank:
             # file.write("The new balance is:" + str(data)+ ".\n ")
             # above code can be written in f-format string as below:
             file.write(f"The new balance is:\t\t\t{data} dollars.\n")
-    
+    # use the decorator to decorate the withdraw method, so we can comment out line 26.
+    @log_transaction
     def withdraw(self,amount):
         # this is good practice to ensure that the amount is not string via float() the value, if it not able to float, means it is string
         try: 
@@ -22,7 +23,7 @@ class Bank:
         
         if amount <= self.balance: 
             self.balance = self.balance - amount
-            self.log_transaction(self.balance)
+            # self.log_transaction(self.balance)
         else:
             print("balance is not enough.")
     def deposit(self,amount):
