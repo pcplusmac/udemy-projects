@@ -10,7 +10,7 @@ class Bank:
         with open("transaction_records.txt","a") as file:
             # file.write("The new balance is:" + str(data)+ ".\n ")
             # above code can be written in f-format string as below:
-            file.write(f"The new balance is:{data}.\n")
+            file.write(f"The new balance is:\t\t\t{data} dollars.\n")
     
     def withdraw(self,amount):
         # this is good practice to ensure that the amount is not string via float() the value, if it not able to float, means it is string
