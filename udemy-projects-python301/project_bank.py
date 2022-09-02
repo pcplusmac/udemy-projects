@@ -4,15 +4,26 @@ class Bank:
     
     def __init__(self,balance=0.00):
         self.balance=balance
-
-    # write the title to the customer.txt
-    def log_transaction(self,data):
-        with open("transaction_records.txt","a") as file:
+    
+    # # the normal log_transaction method
+    # def log_transaction(self,data):
+    #     with open("transaction_records.txt","a") as file:
+    #         # file.write("The new balance is:" + str(data)+ ".\n ")
+    #         # above code can be written in f-format string as below:
+    #         file.write(f"The new balance is:\t\t\t{data} dollars.\n")
+    
+    # define a decorator
+    def decorator(func):
+        # write the title to the customer.txt
+        def log_transaction(self,amount):
+            func(self,amount)
+            with open("transaction_records.txt","a") as file:
             # file.write("The new balance is:" + str(data)+ ".\n ")
             # above code can be written in f-format string as below:
-            file.write(f"The new balance is:\t\t\t{data} dollars.\n")
+                file.write(f"The new balance is:\t\t\t{self.balance} dollars.\n")
+        return log_transaction
     # use the decorator to decorate the withdraw method, so we can comment out line 26.
-    @log_transaction
+    @decorator
     def withdraw(self,amount):
         # this is good practice to ensure that the amount is not string via float() the value, if it not able to float, means it is string
         try: 
@@ -51,30 +62,10 @@ while True:
             customer_acc.withdraw(amt)
             print(customer_acc.balance)
 
+# there are 2 machenism of this app for updating each transaction, one is via decorator, the other is 
+# via the normal method. both are doing for the same output. 
 
 
-
-# prompt user to enter the content like to add to account file
-# content=input("type the name you enter:  ")
-# capitalize the initial letters 
-# content.upper()
-
-# operation on the file
-# with open(user,'a') as file:
-#     file.write(content)
-
-# prompt user to select if like to open the file
-# file_opt=input("do you like to open the file now?(y/n)   ")
-
-# if file_opt in ['y','n']:
-#     if file_opt == 'y':
-#         with open(user,'r') as file:
-#             names=file.readlines()
-#             print(type(names)) 
-#             print(names)
-#             print("---------")
-# for n in names:
-#     print(n)
 
 
     
